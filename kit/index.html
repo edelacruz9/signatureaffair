@@ -125,7 +125,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:12.5px}
 
   <section id="calendar">
     <h2>Posting <span class="g">calendar</span></h2>
-    <p class="lead">Built around the chamber's deadlines and around what the iMath account already has scheduled (Rifles &amp; Real Estate on Nov 19 and 20, Amendment 3 on Nov 9, 12 and Dec 1). Post around 11:30 AM on weekdays and 10:00 AM on weekends, then adjust to what Insights show.</p>
+    <p class="lead">Restarted Monday, Nov 16. To fit all eight awards in before nominations close on Dec 2, each award gets its English Reel late morning and its Spanish Reel around 7 PM on the same day. Rifles &amp; Real Estate keeps Nov 19 and 20, Thanksgiving stays quiet, and Amendment 3 Post 4 shares Dec 1. Post English around 11:30 AM on weekdays and 10:00 AM on weekends, Spanish around 7 PM, then adjust to what Insights show.</p>
     <div class="tablewrap"><table><thead><tr><th>Date</th><th>Post</th><th>Where</th></tr></thead><tbody id="calBody"></tbody></table></div>
   </section>
 
@@ -187,7 +187,7 @@ footer{padding:40px 0 60px;color:var(--muted);font-size:12.5px}
   <section id="links" class="links">
     <h2>Links and <span class="g">tracking</span></h2>
     <p class="lead">Every link goes through the iMath gala page, which counts the visit and forwards to the chamber's official form with our tag (utm_source=imath, utm_campaign=eib2026). The captions already include the right link for each post, and every count shows up live on the iMath Gala Scoreboard.</p>
-    <div class="row"><span>Instagram bio link (from Nov 10 to Dec 17)</span><code id="lkBio"></code></div>
+    <div class="row"><span>Instagram bio link (from Nov 16 to Dec 17)</span><code id="lkBio"></code></div>
     <div class="row"><span>Nomination form, direct (backup only, not counted)</span><code id="lkNom"></code></div>
     <div class="row"><span>Ticket checkout, direct</span><code id="lkTix"></code></div>
     <div class="row"><span>Chamber event page</span><code id="lkDet"></code></div>
@@ -274,26 +274,32 @@ const STORIES = [
   { id: 'cdgala_1', file: 'GalaCountdown_1Day', title: '1 day to the gala', date: 'Wed, Dec 16', action: 'tickets' },
   { id: 'cdgala_0', file: 'GalaCountdown_Tonight', title: 'Tonight', date: 'Thu, Dec 17', action: 'details' },
 ];
-// The calendar avoids the days the iMath account already posts Rifles & Real Estate (Nov 19, 20) and Amendment 3 (Nov 9, 12).
+// Restarted Mon, Nov 16 after a late start. During nominations each award gets two posts on the same day:
+// English late morning (10 AM on weekends) and Spanish around 7 PM. Still clear of Rifles & Real Estate (Nov 19, 20)
+// and Thanksgiving; Amendment 3 Post 4 shares Dec 1.
 const CAL = [
-  ['Tue, Nov 10', 'Kickoff, English', 'kick', 'en', 'Reel on Instagram and Facebook; Feed on LinkedIn'],
-  ['Wed, Nov 11', 'Kickoff, Spanish', 'kick', 'es', 'Reel on Instagram and Facebook; Feed on LinkedIn'],
-  ['Fri, Nov 13', 'Rising Star, English', 'spot_rising', 'en', 'Reel; Feed on LinkedIn'],
-  ['Sat, Nov 14', 'Rising Star, Spanish', 'spot_rising', 'es', 'Reel'],
-  ['Sun, Nov 15', 'Up & Coming, English', 'spot_upcoming', 'en', 'Reel'],
-  ['Mon, Nov 16', 'Up & Coming, Spanish', 'spot_upcoming', 'es', 'Reel; Feed on LinkedIn'],
-  ['Tue, Nov 17', 'Business Leader, English', 'spot_leader', 'en', 'Reel; Feed on LinkedIn'],
-  ['Wed, Nov 18', 'Business Leader, Spanish', 'spot_leader', 'es', 'Reel'],
-  ['Sat, Nov 21', 'Small Business, English', 'spot_small', 'en', 'Reel'],
-  ['Sun, Nov 22', 'Small Business, Spanish', 'spot_small', 'es', 'Reel'],
-  ['Mon, Nov 23', 'Corporate, English', 'spot_corporate', 'en', 'Reel; Feed on LinkedIn'],
-  ['Tue, Nov 24', 'Corporate, Spanish', 'spot_corporate', 'es', 'Reel'],
-  ['Wed, Nov 25', 'Woman in Business, English + Story: 7 days', 'spot_woman', 'en', 'Reel; Story in both languages'],
+  ['Mon, Nov 16', 'Kickoff, English', 'kick', 'en', 'Tonight: Reel on Instagram and Facebook. Put the gala page in the Instagram bio first'],
+  ['Tue, Nov 17', 'Kickoff, Spanish', 'kick', 'es', 'Noon: Reel on Instagram and Facebook. 8 AM: the English Kickoff Feed on LinkedIn'],
+  ['Wed, Nov 18', 'Rising Star, English', 'spot_rising', 'en', '11:30 AM: Reel; Feed on LinkedIn'],
+  ['Wed, Nov 18', 'Rising Star, Spanish', 'spot_rising', 'es', '7 PM: Reel'],
+  ['Thu, Nov 19', 'Rifles & Real Estate: no gala post', null, null, 'Event day'],
+  ['Fri, Nov 20', 'Rifles & Real Estate: no gala post', null, null, 'Event recap day'],
+  ['Sat, Nov 21', 'Up & Coming, English', 'spot_upcoming', 'en', '10 AM: Reel'],
+  ['Sat, Nov 21', 'Up & Coming, Spanish', 'spot_upcoming', 'es', '7 PM: Reel'],
+  ['Sun, Nov 22', 'Business Leader, English', 'spot_leader', 'en', '10 AM: Reel'],
+  ['Sun, Nov 22', 'Business Leader, Spanish', 'spot_leader', 'es', '7 PM: Reel'],
+  ['Mon, Nov 23', 'Small Business, English', 'spot_small', 'en', '11:30 AM: Reel; Feed on LinkedIn'],
+  ['Mon, Nov 23', 'Small Business, Spanish', 'spot_small', 'es', '7 PM: Reel'],
+  ['Tue, Nov 24', 'Corporate, English', 'spot_corporate', 'en', '11:30 AM: Reel; Feed on LinkedIn'],
+  ['Tue, Nov 24', 'Corporate, Spanish', 'spot_corporate', 'es', '7 PM: Reel'],
+  ['Wed, Nov 25', 'Woman in Business, English + Story: 7 days', 'spot_woman', 'en', '11:30 AM: Reel; Feed on LinkedIn; Story in both languages'],
+  ['Wed, Nov 25', 'Woman in Business, Spanish', 'spot_woman', 'es', '7 PM: Reel'],
   ['Thu, Nov 26', 'Thanksgiving: no post', null, null, 'Quiet on purpose'],
-  ['Fri, Nov 27', 'Woman in Business, Spanish', 'spot_woman', 'es', 'Reel'],
-  ['Sat, Nov 28', 'Community Advocate, English', 'spot_community', 'en', 'Reel'],
-  ['Sun, Nov 29', 'Community Advocate, Spanish + Story: 3 days', 'spot_community', 'es', 'Reel; Story in both languages'],
-  ['Mon, Nov 30', 'Nonprofit, English', 'spot_nonprofit', 'en', 'Reel; Feed on LinkedIn'],
+  ['Fri, Nov 27', 'Community Advocate, English', 'spot_community', 'en', '11:30 AM: Reel; Feed on LinkedIn'],
+  ['Fri, Nov 27', 'Community Advocate, Spanish', 'spot_community', 'es', '7 PM: Reel'],
+  ['Sat, Nov 28', 'Reshare the Kickoff Reel to Stories', 'kick', null, 'Story with the nomination link sticker, both languages'],
+  ['Sun, Nov 29', 'Story: 3 days to nominate', 'cdnom_3', null, 'Story in both languages'],
+  ['Mon, Nov 30', 'Nonprofit, English', 'spot_nonprofit', 'en', '11:30 AM: Reel; Feed on LinkedIn'],
   ['Tue, Dec 1', 'Nonprofit, Spanish (Giving Tuesday) + Story: 1 day', 'spot_nonprofit', 'es', 'Reel; Story in both languages. Amendment 3 Post 4 is also today: post them at least four hours apart'],
   ['Wed, Dec 2', 'Story: Last day to nominate', 'cdnom_0', null, 'Story in both languages; reshare the Kickoff Reel to Stories'],
   ['Thu, Dec 3', 'Tickets, English + Story: 14 days', 'tix', 'en', 'Reel; Feed on LinkedIn; Story in both languages'],
@@ -490,10 +496,10 @@ function buildCaption(post, lang, platform) {
   ];
   $('#status').innerHTML = ST.map(([c, t]) => `<span class="chip ${c}"><i></i>${t}</span>`).join('');
   const TODO = [
-    ['ok', '<b>Chamber OK on the logo and coins.</b> Approved on Nov 7, so the kit is final and ready for the first post on Nov 10.'],
+    ['ok', '<b>Chamber OK on the logo and coins.</b> Approved on Nov 7. The campaign restarted on Nov 16 with the calendar above.'],
     [DRAFT ? 'wait' : 'ok', DRAFT ? '<b>Real coin files and the FCHCC logo.</b> Send the nine coin PNGs and the logo; the placeholders in these drafts get swapped and every video is rendered again.' : '<b>Coins and logo.</b> All nine official coins come from the FCHCC OneDrive folder (Categories). The FCHCC logo was lifted from the chamber\'s own post art; if the chamber sends the original logo file, it gets swapped in.'],
     ['ok', '<b>Gala page live.</b> signatureaffair.imathinc.com is published and tested end to end: each visit and click is counted, then sent on to the chamber\'s official form.'],
-    ['wait', '<b>Instagram bio link.</b> Switch the iMath bio link to the gala page on Nov 10 and back after Dec 18.'],
+    ['wait', '<b>Instagram bio link.</b> Switch the iMath bio link to the gala page on Nov 16, before the first post, and back after Dec 18.'],
     ['ok', '<b>Scoreboard.</b> Visits and clicks by day, post, platform and language update live on the iMath Gala Scoreboard.'],
     ['ok', '<b>Facts.</b> Dates, times, venue, prices, categories and self nominations match the chamber site and the nomination form as of Nov 7.'],
   ];
